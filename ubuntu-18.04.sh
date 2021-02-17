@@ -1,18 +1,26 @@
+echo "Prepering..."
+sudo apt update
+
 echo "Installing curl..."
 apt-get install curl -y
+
+echo "Installing git..."
+sudo apt update
+sudo apt install git
+git config --global url.git@github.com:.insteadOf https://github.com/
 
 echo "Installing Google Chrome..."
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
-echo "Installing NodeJS 12"
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-apt-get install nodejs -y
+echo "Installing NodeJS..."
+sudo apt install nodejs -y
 
 echo "Installing GoLang..."
-wget -c https://storage.googleapis.com/golang/go1.12.9.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.12.9.linux-amd64.tar.gz
-echo "Please, add this env on /.profile: export PATH=$PATH:/usr/local/go/bin"
+wget -c https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
+sudo tar -xvf go1.15.3.linux-amd64.tar.gz
+sudo mv go /usr/local
+echo "Please, add these envs on /.profile: export GOROOT=/usr/local/go, export GOPATH=$HOME/projects/go, export PATH=$GOPATH/bin:$GOROOT/bin:$PATH"
 
 
 echo "Installing Docker..."
