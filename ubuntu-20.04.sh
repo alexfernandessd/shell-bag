@@ -18,7 +18,7 @@ sudo apt install nodejs -y
 
 echo "Installing GoLang..."
 wget -c https://dl.google.com/go/go1.15.2.linux-amd64.tar.gz
-sudo tar -xvf go1.15.3.linux-amd64.tar.gz
+sudo tar -xvf go1.15.2.linux-amd64.tar.gz
 sudo mv go /usr/local
 echo "Please, add these envs on /.profile: export GOROOT=/usr/local/go, export GOPATH=$HOME/projects/go, export PATH=$GOPATH/bin:$GOROOT/bin:$PATH"
 
